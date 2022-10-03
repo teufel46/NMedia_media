@@ -1,0 +1,11 @@
+<resources>
+    <string name="albumDsc" translatable="false">Альбом</string>
+    <string name="albumName" translatable="false">Название альбома</string>
+    <string name="dscArtist" translatable="false">Исполнитель</string>
+    <string name="artist" translatable="false">Имя исполнителя</string>
+    <string name="published" translatable="false">Опубликовано</string>
+    <string name="genre" translatable="false">Жанр</string>
+    <string name="albumEmpty" translatable="false">Альбом пуст</string>
+    <string name="albumError" translatable="false">Ошибка при загрущке альбома</string>
+    <string name="retry" translatable="false">Попробовать еще раз</string>
+</resources>

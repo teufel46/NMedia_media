@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="40dp"
+    android:padding="40dp">
+
+    <TextView
+        android:id="@+id/dscAlbumTitle"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="@string/albumDsc"
+        app:layout_constraintBottom_toTopOf="@id/albumTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/albumTitle"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="@string/albumName"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dscAlbumTitle" />
+
+    <TextView
+        android:id="@+id/dscAlbumArtist"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/dscArtist"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/albumTitle" />
+
+    <TextView
+        android:id="@+id/albumArtist"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/artist"
+        app:autoSizeTextType="none"
+        app:layout_constraintBottom_toBottomOf="@id/dscAlbumArtist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/dscAlbumArtist"
+        app:layout_constraintTop_toTopOf="@id/dscAlbumArtist" />
+
+    <TextView
+        android:id="@+id/published"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:text="@string/published"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dscAlbumArtist" />
+
+    <TextView
+        android:id="@+id/genre"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/genre"
+        app:layout_constraintBottom_toBottomOf="@id/published"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/published"
+        app:layout_constraintTop_toTopOf="@id/published" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonPlayPause"
+        style="@style/Widget.AppTheme.IconButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:checkable="true"
+        app:icon="@drawable/ic_play_pause_selector_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/published" />
+
+    <TextView
+        android:id="@+id/emptyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/albumEmpty"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:constraint_referenced_ids="buttonPlayPause,albumArtist,albumTitle,dscAlbumArtist,dscAlbumTitle,published,genre" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/buttonPlayPause"
+        tools:listitem="@layout/card_track" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
